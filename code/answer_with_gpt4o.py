@@ -266,20 +266,20 @@ class ImageEvaluator:
 
 
 if __name__ == "__main__":
-    API_KEY = "sk-bC44gVfudbKseHjOCcFc01696d8d4312BaE85043F2E3C33f"
-    BASE_URL = "https://az.gptplus5.com/v1"
+    API_KEY = "sk-xx"
+    BASE_URL = "https:xx"
     PROMPT_PATH = "prompt_templete/answer.txt"  # 统一的prompt文件路径
     TYPE = ["IF", "VC", "VQ"]
 
-    output_root = "/home/ma-user/work/CIE/answer_gpt"
+    output_root = "./answer_gpt"
     os.makedirs(output_root, exist_ok=True)
-    ROOT_PATH_A = "/home/ma-user/work/CIE/bench/image"  # 原始图片A根目录
+    ROOT_PATH_A = "./bench/image"  # 原始图片A根目录
     model_names = ["OmniGen2"]
 
     for modelname in model_names:
         for tp in TYPE:
-            JSON_FOLDER = f"/home/ma-user/work/CIE/bench/questions_all/{tp}"  # 存放问题JSON文件的文件夹
-            ROOT_PATH_B = f"/home/ma-user/work/CIE/outputs_images/{modelname}"  # 编辑后图片B根目录
+            JSON_FOLDER = f"./bench/questions_all/{tp}"  # 存放问题JSON文件的文件夹
+            ROOT_PATH_B = f"./outputs_images/{modelname}"  # 编辑后图片B根目录
             OUTPUT_FOLDER = f"{output_root}/{tp}/{modelname}"  # 详细结果输出文件
             evaluator = ImageEvaluator(API_KEY, BASE_URL, PROMPT_PATH)
             evaluator.batch_evaluate(JSON_FOLDER, ROOT_PATH_A, ROOT_PATH_B, OUTPUT_FOLDER)

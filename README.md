@@ -1,4 +1,5 @@
 # CREval
+[![Huggingface Dataset](https://img.shields.io/badge/Huggingface-Dataset-ffc107.svg)](https://huggingface.co/datasets/ChonghuinanWang/CREval)
 
 **CREval** is a comprehensive benchmark for evaluating image editing models. It assesses model outputs across three key dimensions:
 

@@ -1,10 +1,6 @@
 # CREval
 [![arXiv paper](https://img.shields.io/badge/arXiv-paper-b31b1b.svg)](https://github.com/ChonghuinanWang/CREval)
 [![Huggingface Dataset](https://img.shields.io/badge/Huggingface-Dataset-ffc107.svg)](https://huggingface.co/datasets/ChonghuinanWang/CREval)
-<<<<<<< HEAD
-
-=======
->>>>>>> e77ae379fdf1eb9dca5df58d48ba8fa895759929
 
 **CREval** is a comprehensive benchmark for evaluating image editing models. It assesses model outputs across three key dimensions:
 

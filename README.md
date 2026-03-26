@@ -20,23 +20,6 @@
 
 ```
 CREval-main/
-├── run_eval.py               # Main evaluation script (ENTRY POINT)
-├── scripts/                  # Utility scripts
-│   └── generate_images.py    # Generate edited images via API
-├── eval_core/               # Core evaluation modules
-│   ├── evaluator.py          # ImageEvaluator class
-│   └── models.py            # Configuration models
-├── bench/                   # Benchmark data (download separately)
-│   ├── image/               # Test images
-│   ├── questions_all/       # Question JSON files (IF/VC/VQ)
-│   ├── instruction.json     # Instruction data
-│   └── utils/              # Utility scripts
-├── code/                    # Legacy scripts (kept for compatibility)
-└── prompt_templete/          # Prompt templates
-```
-
-```
-CREval-main/
 ├─bench
 │  ├─image                    # original image
 │  ├─questiions_all           # questions root path

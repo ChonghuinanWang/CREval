@@ -254,15 +254,15 @@ if __name__ == "__main__":
     PROMPT_PATH = "prompt_templete/answer.txt"  # answer prompt path
     TYPE = ["IF", "VC", "VQ"]
 
-    output_root = "./answer_gpt"
+    output_root = "../answers"
     os.makedirs(output_root, exist_ok=True)
-    ROOT_PATH_A = "./bench/image"  # original image A path
+    ROOT_PATH_A = "../bench/image"  # original image A path
     model_names = ["OmniGen2, Bagel, Qwen-Image-Edit-2509"]
 
     for modelname in model_names:
         for tp in TYPE:
-            JSON_FOLDER = f"./bench/questions_all/{tp}"  # questions json root_path
-            ROOT_PATH_B = f"./outputs_images/{modelname}"  # Edited image B root_path
+            JSON_FOLDER = f"../bench/questions_all/{tp}"  # questions json root_path
+            ROOT_PATH_B = f"../outputs_images/{modelname}"  # Edited image B root_path
             OUTPUT_FOLDER = f"{output_root}/{tp}/{modelname}"  # output path
             evaluator = ImageEvaluator(API_KEY, BASE_URL, PROMPT_PATH)
             evaluator.batch_evaluate(JSON_FOLDER, ROOT_PATH_A, ROOT_PATH_B, OUTPUT_FOLDER)

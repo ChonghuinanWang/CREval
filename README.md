@@ -1,4 +1,7 @@
 # CREval
+[![arXiv paper](https://img.shields.io/badge/arXiv-paper-b31b1b.svg)](https://github.com/ChonghuinanWang/CREval)
+[![Huggingface Dataset](https://img.shields.io/badge/Huggingface-Dataset-ffc107.svg)](https://huggingface.co/datasets/ChonghuinanWang/CREval)
+
 
 **CREval** is a comprehensive benchmark for evaluating image editing models. It assesses model outputs across three key dimensions:
 
@@ -33,6 +36,22 @@ CREval-main/
 └── prompt_templete/          # Prompt templates
 ```
 
+```
+CREval-main/
+├─bench
+│  ├─image                    # original image
+│  ├─questiions_all           # questions root path
+│  │  ├─IF                      # IF questions 
+│  │  ├─VC                      # VC questions
+│  │  └─VQ                      # VQ questions
+│  └─instruction.json         # image-instruction annotation
+└─code
+    ├─prompt_templete         # Prompt templates
+    │    └─exa                # context example for each category
+    └─answer_with_gpt4o.py    # Evaluation script
+
+```
+
 ## Quick Start
 
 ### 1. Install Dependencies
@@ -43,91 +62,53 @@ pip install -r requirements.txt
 
 ### 2. Configure API Keys
 
-Copy the example environment file and edit with your credentials:
-
+Prepare your own API key and write it in the corresponding position in the code. 
 ```bash
-cp .env.example .env
-# Edit .env with your API keys
-```
-
-Or set via environment variables:
-
+API_KEY = "sk-xx", BASE_URL = "https:xx"
+``` 
+or 
 ```bash
-export OPENAI_API_KEY="your-api-key-here"
-export IMAGE_EDIT_API_KEY="your-image-edit-api-key-here"
+client.api_key = 'sk-xx', client.base_url = 'https://'
 ```
 
 ### 3. Download Benchmark Data
 
-Benchmark data must be downloaded separately. See [DATA_DOWNLOAD.md](DATA_DOWNLOAD.md) for details.
+Benchmark data must be downloaded separately. See [CREval-Bench](https://huggingface.co/datasets/ChonghuinanWang/CREval) for details.
 
 ### 4. Run Evaluation
 
+put your edited images in CREval/outputs_images/{modelname}
+
 ```bash
-python run_eval.py \
-  --root_path_a ./bench/image \
-  --root_path_b ./outputs_images/YourModel \
-  --type IF VC VQ
+cd code
 ```
 
-That's it! Results will be saved to `./results/`
+```bash
+python answer_with_gpt4o.py
+```
+
+That's it! Results will be saved to `../answers/`, then calculate the score
+
+```bash
+python avg.py
+```
+
 
 ## Usage
 
-### Evaluate Image Editing Results
+### Build your own dataset
 
-The recommended way is to use `run_eval.py`:
-
-```bash
-# Basic evaluation
-python run_eval.py \
-  --root_path_a ./bench/image \
-  --root_path_b ./outputs_images/YourModel
-
-# Evaluate specific dimensions only
-python run_eval.py -a ./bench/image -b ./outputs --type IF VC
-
-# Use short arguments
-python run_eval.py -a ./bench/image -b ./outputs -t IF -o ./results
-
-# Evaluate multiple models
-python run_eval.py -a ./bench/image -b ./outputs -m Model1 Model2 Model3
-```
-
-**Arguments:**
-| Argument | Short | Required | Description |
-|----------|-------|----------|-------------|
-| `--root_path_a` | `-a` | Yes | Directory containing original images |
-| `--root_path_b` | `-b` | Yes | Directory containing edited images (or parent if using --model_names) |
-| `--type` | `-t` | No | Evaluation type(s): IF, VC, VQ (default: all) |
-| `--model_names` | `-m` | No | Model name(s) to evaluate (default: default) |
-| `--output_root` | `-o` | No | Output directory for results (default: ./results) |
-| `--api_key` | `-k` | No | API key (or set OPENAI_API_KEY env var) |
-| `--base_url` | | No | API base URL |
-| `--prompt_path` | `-p` | No | Path to prompt template |
-| `--overwrite` | | No | Re-evaluate even if results exist |
-
-### Generate Edited Images (Optional)
-
-If you want to generate edited images using an API:
+Prepare the original image, then generate image-instruction pairs and evaluation questions for different dimensions.
 
 ```bash
-python scripts/generate_images.py \
-  --api_key YOUR_API_KEY \
-  --image_dir ./bench/image \
-  --output_dir ./outputs_images
+# generate instructions
+python write_instruction_with_gpt-4o.py \
+
+# Generate evaluation questions from different dimensions
+python gen_question_with_qwen_api.py
+
 ```
 
-**Arguments:**
-| Argument | Short | Description |
-|----------|-------|-------------|
-| `--api_key` | `-k` | API key (or set IMAGE_EDIT_API_KEY env var) |
-| `--instruction_file` | `-i` | Path to instruction JSON (default: bench/instruction.json) |
-| `--image_dir` | `-d` | Directory with input images (default: bench/image) |
-| `--output_dir` | `-o` | Output directory (default: outputs_images/gpt-image-1) |
-| `--model` | | Model name to use |
-| `--size` | | Image size (default: 1024x1024) |
-| `--quality` | | Image quality (high/medium/low/auto) |
 
 ## Evaluation Details
 
@@ -173,21 +154,16 @@ For each evaluated image pair, the tool generates:
 
 Results are saved as JSON files with corresponding `.txt` files containing raw model responses.
 
-## Documentation
-
-- [DATA_DOWNLOAD.md](DATA_DOWNLOAD.md) - How to download benchmark data
-- [CONFIG.md](CONFIG.md) - Configuration guide
-
 ## Citation
 
 If you use CREval in your research, please cite:
 
 ```bibtex
 @inproceedings{creval2025,
-  title={CREval: A Comprehensive Benchmark for Image Editing Evaluation},
+  title={CREval: An Automated Interpretable Evaluation for Creative Image Manipulation under Complex Instructions},
   author={...},
   booktitle={CVPR},
-  year={2025}
+  year={2026}
 }
 ```
 

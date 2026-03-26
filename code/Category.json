@@ -1,0 +1,48 @@
+[
+    {
+      "id": 1,
+      "Category": "Reconstruction - Derivative Character",
+      "Description": "Convert human figures, animals, or objects into stylized, simplified, or exaggerated forms such as cartoons, chibi, mascots, figurines, keychains, or fridge magnets, emphasizing charm, playfulness, iconic appeal, big head doll or Russian nesting doll."
+    },
+    {
+      "id": 2,
+      "Category": "Reconstruction - Reimagined Representations",
+      "Description": "Preserve the essence of the object while reimagining its presentation, transforming it into creative tangible forms—such as customized cards, sticker, art postcards, themed photos, stamps, calendars, or decorative prints—and integrating these into carriers like paper, panels, or photo albums."
+    },
+    {
+      "id": 3,
+      "Category": "Reconstruction - Surreal Fantasy",
+      "Description": "Transform subjects into imaginative forms such as fantastical creatures, hybrid beings, or virtual avatars, emphasizing surreal, dreamlike, and boundary-breaking creativity."
+    },
+    {
+      "id": 4,
+      "Category": "Stylization - Artistic Style Transformation",
+      "Description": "Do not replace the main objects on the screen and reinterpret images through styles such as watercolor, oil painting, ukiyo-e, cubism, pop art, or animation, transforming the entire scene by integrating visuals into mediums and environments like murals, digital screens, architectural surfaces, printed on clothing, or interactive displays to create immersive artistic expression."
+    },
+    {
+      "id": 5,
+      "Category": "Stylization - Identity&Cultural Transformation",
+      "Description": "Transforming professional, cultural, social, or ceremonial identities into specific historical and artistic themes."
+    },
+    {
+      "id": 6,
+      "Category": "Stylization - Material Transformation",
+      "Description": "Reconstruct images by altering the visual and tactile qualities of materials, including but not limited to enamel, puzzles, crystals, leaves, cookies, plush toys, LEGO, etc. Then place the converted theme in a simple background scene, such as a desktop, gallery wall, shelf, or uncluttered background."
+    },
+    {
+      "id": 7,
+      "Category": "Contextualization - Containerized Scenario",
+      "Description": "Transform objects through methods like 3D modeling, miniaturization, or anthropomorphism before placing them into enclosed or framed settings—such as display cases, lanterns or snow globes, to creating immersive decorative worlds with enhanced character and narrative appeal."
+    },
+    {
+      "id": 8,
+      "Category": "Contextualization - Commercial Design",
+      "Description": "Convert imagery into commercial design assets such as packaging, advertising, branding, or merchandise, reimagining subjects as product mockups, or market-ready collectibles with strong visual identity and appeal."
+    },
+    {
+      "id": 9,
+      "Category": "Contextualization - Informational&Narrative Expression",
+      "Description": "Please anthropomorphize non human subjects, and transform imagery into visual storytelling or informational formats such as diagrams, posters, comics, infographics, or sequential art, blending clarity with narrative flow to convey knowledge or messages effectively."
+    }
+  ]
+  

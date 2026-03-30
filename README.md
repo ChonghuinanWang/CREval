@@ -1,5 +1,5 @@
 # CREval
-[![arXiv paper](https://img.shields.io/badge/arXiv-paper-b31b1b.svg)](https://github.com/ChonghuinanWang/CREval)
+[![arXiv paper](https://img.shields.io/badge/arXiv-paper-b31b1b.svg)](http://arxiv.org/abs/2603.26174)
 [![Huggingface Dataset](https://img.shields.io/badge/Huggingface-Dataset-ffc107.svg)](https://huggingface.co/datasets/ChonghuinanWang/CREval)
 
 **CREval** is a comprehensive benchmark for evaluating image editing models. It assesses model outputs across three key dimensions:
@@ -141,11 +141,14 @@ Results are saved as JSON files with corresponding `.txt` files containing raw m
 If you use CREval in your research, please cite:
 
 ```bibtex
-@inproceedings{creval2025,
-  title={CREval: An Automated Interpretable Evaluation for Creative Image Manipulation under Complex Instructions},
-  author={...},
-  booktitle={CVPR},
-  year={2026}
+@misc{wang2026crevalautomatedinterpretableevaluation,
+      title={CREval: An Automated Interpretable Evaluation for Creative Image Manipulation under Complex Instructions}, 
+      author={Chonghuinan Wang and Zihan Chen and Yuxiang Wei and Tianyi Jiang and Xiaohe Wu and Fan Li and Wangmeng Zuo and Hongxun Yao},
+      year={2026},
+      eprint={2603.26174},
+      archivePrefix={arXiv},
+      primaryClass={cs.CV},
+      url={https://arxiv.org/abs/2603.26174}, 
 }
 ```
 

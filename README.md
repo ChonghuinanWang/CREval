@@ -141,14 +141,11 @@ Results are saved as JSON files with corresponding `.txt` files containing raw m
 If you use CREval in your research, please cite:
 
 ```bibtex
-@misc{wang2026crevalautomatedinterpretableevaluation,
-      title={CREval: An Automated Interpretable Evaluation for Creative Image Manipulation under Complex Instructions}, 
-      author={Chonghuinan Wang and Zihan Chen and Yuxiang Wei and Tianyi Jiang and Xiaohe Wu and Fan Li and Wangmeng Zuo and Hongxun Yao},
-      year={2026},
-      eprint={2603.26174},
-      archivePrefix={arXiv},
-      primaryClass={cs.CV},
-      url={https://arxiv.org/abs/2603.26174}, 
+@article{wang2026creval,
+  title={CREval: An Automated Interpretable Evaluation for Creative Image Manipulation under Complex Instructions},
+  author={Wang, Chonghuinan and Chen, Zihan and Wei, Yuxiang and Jiang, Tianyi and Wu, Xiaohe and Li, Fan and Zuo, Wangmeng and Yao, Hongxun},
+  journal={arXiv preprint arXiv:2603.26174},
+  year={2026}
 }
 ```
 
